@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+
+# macOS system files
+.DS_Store
+
+# IDEs
+.idea/
+.vscode/
+
+# Ignore everything in music folder...
+music/**
+
+# ...except root-level mp3 files and .gitkeep
+!music/*.mp3
+!music/.gitkeep
