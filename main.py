@@ -111,7 +111,6 @@ def main():
             dist = gesture_ctrl.distance(left_thumb, right_thumb)
             vol_perc = np.interp(dist, [50, 300], [0, 100])
             vol_perc = max(0, min(vol_perc, 100))
-
             music_ctrl.set_volume(vol_perc / 100)
 
             speed = np.interp(speed_perc, [0, 100], [0.5, 2.0])
@@ -131,7 +130,20 @@ def main():
             fingers_count = gesture_ctrl.count_fingers(allHands[0])
             open_fingers = gesture_ctrl.get_open_fingers(allHands[0])
 
-            if fingers_count == 5:
+            if open_fingers == [1, 1, 0, 0, 0]:  # 👌 OK
+                freq_perc = 50
+                speed_perc = 50
+                vol_perc = 70
+                current_voice = "original"
+                current_freq_label = "normal"
+                last_freq_label = "normal"
+                music_ctrl.set_volume(0.7)
+                music_ctrl.set_playback_speed(1.0)
+                music_ctrl.set_voice_and_freq(current_voice, current_freq_label)
+                music_ctrl.play()
+                gesture_text = "Reset to Default"
+
+            elif fingers_count == 5:
                 music_ctrl.pause()
                 gesture_text = "Pause"
             elif fingers_count == 0:
@@ -177,7 +189,7 @@ def main():
             last_track_action = None
 
         if current_time - gesture_text_show_time > gesture_text_duration:
-            if gesture_text in ["Next Track", "Previous Track"]:
+            if gesture_text in ["Next Track", "Previous Track", "Reset to Default"]:
                 gesture_text = ""
 
         draw_progress_bar_vertical(img, freq_perc, x=50, y=120, color=(0, 150, 255))

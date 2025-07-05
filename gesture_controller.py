@@ -84,3 +84,12 @@ class GestureController:
                 fingers.append(0)
 
         return fingers
+
+    def is_ok_sign(self, hand_landmarks):
+        """
+        تشخیص ژست OK (👌) — زمانی که نوک انگشت شست و اشاره خیلی به هم نزدیک باشند.
+        """
+        thumb_tip = hand_landmarks[4][1:]
+        index_tip = hand_landmarks[8][1:]
+        distance = self.distance(thumb_tip, index_tip)
+        return distance < 30  # آستانه تشخیص (قابل تنظیم)
