@@ -75,9 +75,9 @@ def main():
     gesture_text_duration = 2
 
     current_voice = "original"
-    four_held = False
-    four_hold_start = None
-    last_four_time = 0
+    one_held = False
+    one_hold_start = None
+    last_one_time = 0
 
     voice_change_text = ""
     voice_change_time = 0
@@ -129,6 +129,8 @@ def main():
             speed_perc = last_speed_perc
 
             fingers_count = gesture_ctrl.count_fingers(allHands[0])
+            open_fingers = gesture_ctrl.get_open_fingers(allHands[0])
+
             if fingers_count == 5:
                 music_ctrl.pause()
                 gesture_text = "Pause"
@@ -143,26 +145,30 @@ def main():
                     gesture_text = "Next Track"
                     gesture_text_show_time = current_time
             elif fingers_count == 3:
-                if last_track_action != "prev" or (current_time - last_action_time) > action_interval:
-                    music_ctrl.previous_track()
-                    last_action_time = current_time
-                    last_track_action = "prev"
-                    gesture_text = "Previous Track"
-                    gesture_text_show_time = current_time
-            elif gesture_ctrl.is_four_fingers(allHands[0]):
-                if not four_held:
-                    four_hold_start = current_time
-                    four_held = True
-                elif current_time - four_hold_start >= 2 and (current_time - last_four_time > 2):
-                    # تغییر جنسیت
-                    current_voice = "female" if current_voice == "male" else ("male" if current_voice == "original" else "original")
+                if open_fingers[0] and open_fingers[1] and open_fingers[2] and not open_fingers[3] and not open_fingers[4]:
+                    if last_track_action != "prev" or (current_time - last_action_time) > action_interval:
+                        music_ctrl.previous_track()
+                        last_action_time = current_time
+                        last_track_action = "prev"
+                        gesture_text = "Previous Track"
+                        gesture_text_show_time = current_time
+            elif fingers_count == 1:
+                if not one_held:
+                    one_hold_start = current_time
+                    one_held = True
+                elif current_time - one_hold_start >= 2 and (current_time - last_one_time > 2):
+                    current_voice = (
+                        "female" if current_voice == "male"
+                        else "male" if current_voice == "original"
+                        else "original"
+                    )
                     music_ctrl.set_voice_and_freq(current_voice, current_freq_label)
                     voice_change_text = f"Voice: {current_voice.upper()}"
                     voice_change_time = current_time
-                    last_four_time = current_time
+                    last_one_time = current_time
             else:
-                four_held = False
-                four_hold_start = None
+                one_held = False
+                one_hold_start = None
                 last_track_action = None
 
         else:

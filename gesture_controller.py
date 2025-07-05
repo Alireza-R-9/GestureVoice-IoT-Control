@@ -59,5 +59,28 @@ class GestureController:
         return sum(fingers)
 
     def is_four_fingers(self, hand_landmarks):
-
         return self.count_fingers(hand_landmarks) == 4
+
+    def get_open_fingers(self, hand_landmarks):
+        """
+        بازگشت وضعیت باز یا بسته بودن هر یک از انگشتان (شست تا کوچک)
+        خروجی: لیستی شامل ۵ مقدار بولی (۰ یا ۱) برای هر انگشت
+        ترتیب: [Thumb, Index, Middle, Ring, Pinky]
+        """
+        fingers = []
+        tips = [4, 8, 12, 16, 20]
+
+        # Thumb (محور x برای دست راست/چپ)
+        if hand_landmarks[tips[0]][1] > hand_landmarks[tips[0] - 1][1]:
+            fingers.append(1)
+        else:
+            fingers.append(0)
+
+        # سایر انگشتان
+        for id in range(1, 5):
+            if hand_landmarks[tips[id]][2] < hand_landmarks[tips[id] - 2][2]:
+                fingers.append(1)
+            else:
+                fingers.append(0)
+
+        return fingers
