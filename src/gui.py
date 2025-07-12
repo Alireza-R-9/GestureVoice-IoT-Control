@@ -1,63 +1,29 @@
 import streamlit as st
-import cv2
-from gesture_module.hand_detector import HandDetector
-from gesture_module.gesture_controller import GestureController
-from music_module.music_controller import MusicController
-import threading
-import time
+import subprocess
+import sys
+import os
 
-def run_camera(gesture_ctrl, detector, music_ctrl, stop_event):
-    cap = cv2.VideoCapture(0)
-    stframe = st.empty()
+st.title("GestureVoice IoT Control")
 
-    freq_perc = 50
-    speed_perc = 50
-    vol_perc = 70
-    current_voice = "original"
+mode = st.radio(
+    "Select control mode:",
+    ("Gesture Control", "Voice Control")
+)
 
-    while not stop_event.is_set():
-        ret, frame = cap.read()
-        if not ret:
-            st.warning("No camera feed!")
-            break
+if st.button("Start"):
+    st.write(f"Starting {mode}...")
 
-        img = detector.find_hands(frame)
-        allHands = detector.get_landmarks(img)
+    # فرض کنیم فایل ها:
+    # Gesture Control: src/vision_main.py
+    # Voice Control: src/voice_main.py
 
-        # (در اینجا کد پردازش ژست‌ها و کنترل موزیک رو قرار بدید)
-
-        stframe.image(img, channels="BGR")
-        time.sleep(0.03)  # فریم ریت تقریباً 30fps
-
-    cap.release()
-
-
-def main():
-    st.title("GestureVoice IoT Control - GUI")
-
-    music_ctrl = MusicController("music/")
-    detector = HandDetector()
-    gesture_ctrl = GestureController()
-
-    mode = st.radio("Select Control Mode:", ("Gesture", "Voice (future)", "Off"))
-
-    if mode == "Gesture":
-        st.info("Running Gesture Control Mode")
-
-        stop_event = threading.Event()
-        cam_thread = threading.Thread(target=run_camera, args=(gesture_ctrl, detector, music_ctrl, stop_event))
-        cam_thread.start()
-
-        if st.button("Stop Gesture Control"):
-            stop_event.set()
-            cam_thread.join()
-            st.success("Gesture Control Stopped")
-
-    elif mode == "Voice (future)":
-        st.warning("Voice Control mode not implemented yet.")
-
+    if mode == "Gesture Control":
+        # اجرای فایل vision_main.py به صورت subprocess
+        st.write("Launching Gesture Control (vision_main.py)...")
+        subprocess.Popen([sys.executable, os.path.join("src", "vision_main.py")])
     else:
-        st.write("Control is off.")
+        # اجرای فایل voice_main.py
+        st.write("Launching Voice Control (voice_main.py)...")
+        subprocess.Popen([sys.executable, os.path.join("src", "voice_main.py")])
 
-if __name__ == "__main__":
-    main()
+    st.write("If the new window does not open automatically, please run the selected module manually.")
