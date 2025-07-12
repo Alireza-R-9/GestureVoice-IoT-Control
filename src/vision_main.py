@@ -1,9 +1,10 @@
 import cv2
 import numpy as np
 import time
-from hand_detector import HandDetector
-from gesture_controller import GestureController
-from music_controller import MusicController
+import os
+from gesture_module.hand_detector import HandDetector
+from gesture_module.gesture_controller import GestureController
+from music_module.music_controller import MusicController
 
 
 def draw_progress_bar_vertical(img, perc, x=50, y=150, w=40, h=300, color=(0, 255, 0)):
@@ -54,10 +55,14 @@ def speed_label(perc):
 
 
 def main():
+    # مسیر دایرکتوری ریشه پروژه (یک فولدر بالاتر از این فایل)
+    root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    music_path = os.path.join(root_dir, "music")
+
     cap = cv2.VideoCapture(0)
     detector = HandDetector(maxHands=2)
     gesture_ctrl = GestureController()
-    music_ctrl = MusicController("music/")
+    music_ctrl = MusicController(music_path)  # مسیر صحیح به پوشه music
 
     freq_perc = 50
     speed_perc = 50

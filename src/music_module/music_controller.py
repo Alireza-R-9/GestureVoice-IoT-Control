@@ -1,11 +1,11 @@
 import os
 import vlc
 
-
 class MusicController:
     def __init__(self, music_folder):
-        self.music_folder = music_folder
-        self.processed_folder = os.path.join(music_folder, "processed")
+        # تبدیل مسیر به مسیر مطلق
+        self.music_folder = os.path.abspath(music_folder)
+        self.processed_folder = os.path.join(self.music_folder, "processed")
         self.voice_gender = "original"  # original, male, female
         self.freq_label = "normal"      # verylow, low, normal, high, veryhigh
 
