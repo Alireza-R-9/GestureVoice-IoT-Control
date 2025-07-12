@@ -10,3 +10,4 @@ torch
 torchaudio
 facial-emotion-recognition
 python-vlc
+streamlit
