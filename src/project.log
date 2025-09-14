@@ -1,0 +1,64 @@
+2025-09-11 09:56:22,018 [INFO] MusicVoiceControl: شروع تست لاگر
+2025-09-11 09:56:22,018 [ERROR] MusicVoiceControl: این یک خطای تستی است
+2025-09-11 09:58:06,186 [INFO] MusicVoiceControl: تست info از logger.py
+2025-09-11 09:58:06,186 [ERROR] MusicVoiceControl: تست error از logger.py
+2025-09-11 09:59:52,262 [ERROR] MusicVoiceControl: پوشه پیدا نشد: /Users/m2/Documents/code/GestureVoice-IoT-Control/src/music/orginal/normal
+2025-09-11 09:59:52,263 [INFO] MusicVoiceControl: 🎶 MusicPlayer initialized
+2025-09-11 09:59:52,263 [WARNING] MusicVoiceControl: هیچ آهنگی برای پخش وجود ندارد
+2025-09-11 10:00:07,279 [INFO] MusicVoiceControl: ⏹ پخش متوقف شد
+2025-09-11 10:03:47,218 [ERROR] MusicVoiceControl: پوشه پیدا نشد: /Users/m2/Documents/code/GestureVoice-IoT-Control/src/music/orginal/normal
+2025-09-11 10:03:47,218 [INFO] MusicVoiceControl: 🎶 MusicPlayer initialized
+2025-09-11 10:04:17,648 [WARNING] MusicVoiceControl: هیچ آهنگی برای پخش وجود ندارد
+2025-09-11 23:35:44,123 [INFO] MusicVoiceControl: تست info از logger.py
+2025-09-11 23:35:44,123 [ERROR] MusicVoiceControl: تست error از logger.py
+2025-09-11 23:38:13,669 [INFO] MusicVoiceControl: 🎼 FrequencyControl فعال شد → normal
+2025-09-11 23:38:13,669 [ERROR] MusicVoiceControl: ❌ مسیر موزیک یافت نشد: /Users/m2/Documents/code/GestureVoice-IoT-Control/src/music/orginal
+2025-09-11 23:38:13,669 [INFO] MusicVoiceControl: 🔊 ولوم اولیه تنظیم شد: 0.70
+2025-09-11 23:38:13,669 [INFO] MusicVoiceControl: ⚡ SpeedControl آماده به کار است (سرعت نرمال)
+2025-09-11 23:38:13,669 [INFO] MusicVoiceControl: 🎶 MusicPlayer آماده به کار است
+2025-09-11 23:38:16,874 [INFO] src.voice_module.speech_to_text: 🎙️ لطفاً صحبت کنید ...
+2025-09-11 23:38:24,436 [ERROR] src.voice_module.speech_to_text: ❌ گفتار قابل شناسایی نبود.
+2025-09-11 23:38:24,647 [INFO] src.voice_module.speech_to_text: 🎙️ لطفاً صحبت کنید ...
+2025-09-11 23:38:31,897 [ERROR] src.voice_module.speech_to_text: ❌ گفتار قابل شناسایی نبود.
+2025-09-11 23:38:32,118 [INFO] src.voice_module.speech_to_text: 🎙️ لطفاً صحبت کنید ...
+2025-09-11 23:38:37,809 [INFO] src.voice_module.speech_to_text: ✅ متن تشخیص داده شد: پخش
+2025-09-11 23:38:37,928 [INFO] src.voice_module.voice_command_handler: 🎙️ دستور صوتی دریافت شد: پخش
+2025-09-11 23:38:37,928 [INFO] src.voice_module.voice_command_handler: ✅ دستور شناسایی شد: play
+2025-09-11 23:38:38,021 [INFO] src.voice_module.speech_to_text: 🎙️ لطفاً صحبت کنید ...
+2025-09-11 23:38:47,941 [ERROR] src.voice_module.speech_to_text: ❌ گفتار قابل شناسایی نبود.
+2025-09-11 23:38:48,154 [INFO] src.voice_module.speech_to_text: 🎙️ لطفاً صحبت کنید ...
+2025-09-11 23:38:55,539 [ERROR] src.voice_module.speech_to_text: ❌ گفتار قابل شناسایی نبود.
+2025-09-11 23:38:55,753 [INFO] src.voice_module.speech_to_text: 🎙️ لطفاً صحبت کنید ...
+2025-09-13 23:36:36,834 [INFO] MusicVoiceControl: Test info from logger.py
+2025-09-13 23:36:36,834 [ERROR] MusicVoiceControl: Test error from logger.py
+2025-09-13 23:37:03,304 [INFO] MusicVoiceControl: 🎼 FrequencyControl فعال شد → normal
+2025-09-13 23:37:03,305 [ERROR] MusicVoiceControl: ❌ Music directory not found: /Users/m2/Documents/code/GestureVoice-IoT-Control/src/music/orginal
+2025-09-13 23:37:03,305 [INFO] MusicVoiceControl: 🔊 Initial volume set: 0.70
+2025-09-13 23:37:03,305 [INFO] MusicVoiceControl: ⚡ SpeedControl ready (normal speed)
+2025-09-13 23:37:03,305 [INFO] MusicVoiceControl: 🎶 MusicPlayer is ready
+2025-09-13 23:39:48,389 [INFO] MusicVoiceControl: 🎼 FrequencyControl فعال شد → normal
+2025-09-13 23:39:48,390 [ERROR] MusicVoiceControl: ❌ Music directory not found: /Users/m2/Documents/code/GestureVoice-IoT-Control/src/music/processed/orginal
+2025-09-13 23:39:48,390 [INFO] MusicVoiceControl: 🔊 Initial volume set: 0.70
+2025-09-13 23:39:48,390 [INFO] MusicVoiceControl: ⚡ SpeedControl ready (normal speed)
+2025-09-13 23:39:48,390 [INFO] MusicVoiceControl: 🎶 MusicPlayer is ready
+2025-09-13 23:41:01,152 [INFO] MusicVoiceControl: 🎼 FrequencyControl فعال شد → normal
+2025-09-13 23:41:01,152 [ERROR] MusicVoiceControl: ❌ Music directory not found: /Users/m2/Documents/code/GestureVoice-IoT-Control/src/music/processed/orginal
+2025-09-13 23:41:01,152 [INFO] MusicVoiceControl: 🔊 Initial volume set: 0.70
+2025-09-13 23:41:01,152 [INFO] MusicVoiceControl: ⚡ SpeedControl ready (normal speed)
+2025-09-13 23:41:01,152 [INFO] MusicVoiceControl: 🎶 MusicPlayer is ready
+2025-09-14 10:21:31,208 [INFO] MusicVoiceControl: ⚡ SpeedControl ready (normal speed)
+2025-09-14 10:21:40,907 [INFO] MusicVoiceControl: ⚡ SpeedControl ready (normal speed)
+2025-09-14 10:21:44,427 [INFO] MusicVoiceControl: ⚡ SpeedControl ready (normal speed)
+2025-09-14 10:21:47,359 [INFO] MusicVoiceControl: ⚡ SpeedControl ready (normal speed)
+2025-09-14 10:21:52,908 [INFO] MusicVoiceControl: ⚡ SpeedControl ready (normal speed)
+2025-09-14 10:21:55,192 [INFO] MusicVoiceControl: ⚡ SpeedControl ready (normal speed)
+2025-09-14 10:24:08,381 [INFO] MusicVoiceControl: ⚡ SpeedControl ready (normal speed)
+2025-09-14 10:24:21,078 [INFO] MusicVoiceControl: ⚡ SpeedControl ready (normal speed)
+2025-09-14 10:24:39,429 [INFO] MusicVoiceControl: ⚡ SpeedControl ready (normal speed)
+2025-09-14 10:24:47,244 [INFO] MusicVoiceControl: ⚡ SpeedControl ready (normal speed)
+2025-09-14 10:26:26,691 [INFO] MusicVoiceControl: ⚡ SpeedControl ready (normal speed)
+2025-09-14 10:26:34,824 [INFO] MusicVoiceControl: ⚡ SpeedControl ready (normal speed)
+2025-09-14 10:27:04,630 [INFO] MusicVoiceControl: ⚡ SpeedControl ready (normal speed)
+2025-09-14 10:27:53,707 [INFO] MusicVoiceControl: ⚡ SpeedControl ready (normal speed)
+2025-09-14 10:29:51,416 [INFO] MusicVoiceControl: ⚡ SpeedControl ready (normal speed)
+2025-09-14 10:33:08,944 [INFO] MusicVoiceControl: ⚡ SpeedControl ready (normal speed)
