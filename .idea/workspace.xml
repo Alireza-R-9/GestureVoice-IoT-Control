@@ -5,23 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c63bf377-eb1f-4f7b-8751-f16ee72ba005" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/audio_player/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/audio_player/__main__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/audio_player/frequency_control.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/audio_player/player.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/audio_player/speed_control.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/audio_player/volume_control.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/logger.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/voice_module/command_parser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/voice_module/microphone_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/voice_module/speech_to_text.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/voice_module/voice_command_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/music_module/pitch_converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/music_module/pitch_converter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/voice_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/voice_main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +120,7 @@
       <workItem from="1756760294186" duration="4846000" />
       <workItem from="1757074684706" duration="1000" />
       <workItem from="1757074921922" duration="11199000" />
-      <workItem from="1757708673777" duration="5986000" />
+      <workItem from="1757708673777" duration="6620000" />
     </task>
     <servers />
   </component>
