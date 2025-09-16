@@ -5,10 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c63bf377-eb1f-4f7b-8751-f16ee72ba005" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/server_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/project.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/server_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/audio_player/frequency_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/audio_player/frequency_control.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/audio_player/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/audio_player/player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/audio_player/speed_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/audio_player/speed_control.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/audio_player/volume_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/audio_player/volume_control.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gesture_module/gesture_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gesture_module/gesture_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gesture_module/hand_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gesture_module/hand_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/music_module/music_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/music_module/music_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/music_module/pitch_converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/music_module/pitch_converter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/logger.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +157,7 @@
       <workItem from="1756760294186" duration="4846000" />
       <workItem from="1757074684706" duration="1000" />
       <workItem from="1757074921922" duration="11199000" />
-      <workItem from="1757708673777" duration="9697000" />
+      <workItem from="1757708673777" duration="11233000" />
     </task>
     <servers />
   </component>
@@ -158,6 +167,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/GestureVoice_IoT_Control$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1754601872050" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/GestureVoice_IoT_Control$main.coverage" NAME="main Coverage Results" MODIFIED="1752333791424" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GestureVoice_IoT_Control$server_test.coverage" NAME="server_test Coverage Results" MODIFIED="1758029021960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GestureVoice_IoT_Control$voice_main.coverage" NAME="voice_main Coverage Results" MODIFIED="1754633937278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/GestureVoice_IoT_Control$vision_main.coverage" NAME="vision_main Coverage Results" MODIFIED="1752342521861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/GestureVoice_IoT_Control$speech_to_text.coverage" NAME="speech_to_text Coverage Results" MODIFIED="1754602131926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/voice_module" />

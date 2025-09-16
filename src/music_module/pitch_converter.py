@@ -2,11 +2,11 @@ import os
 import librosa
 import soundfile as sf
 
-# مسیر پوشه موسیقی اصلی
+# Base music folder
 music_folder = "music"
 processed_folder = os.path.join(music_folder, "processed")
 
-# تنظیمات پردازش
+# ----------------- Processing Settings -----------------
 freq_levels = {
     "verylow": 0.5,
     "low": 0.75,
@@ -16,25 +16,37 @@ freq_levels = {
 }
 
 voice_genders = {
-    "original": 0,     # تغییر جنسیت ندارد
-    "male": -3,        # بم‌تر
-    "female": 3        # زیرتر
+    "original": 0,     # No pitch shift
+    "male": -3,        # Lower pitch
+    "female": 3        # Higher pitch
 }
 
 
 def ensure_directory(path):
+    """
+    Ensure that a directory exists; create it if it does not.
+    """
     if not os.path.exists(path):
         os.makedirs(path)
 
 
 def convert_and_save(input_path, output_path, pitch_semitones, time_stretch_factor):
+    """
+    Convert a single track with pitch shift and time-stretching, then save it.
+
+    Args:
+        input_path (str): Path to the input audio file.
+        output_path (str): Path to save the processed audio file.
+        pitch_semitones (int/float): Number of semitones to shift (positive or negative).
+        time_stretch_factor (float): Factor to stretch/compress time (speed).
+    """
     y, sr = librosa.load(input_path, sr=None)
 
-    # تغییر گام
+    # Apply pitch shift
     if pitch_semitones != 0:
         y = librosa.effects.pitch_shift(y, sr=sr, n_steps=pitch_semitones)
 
-    # تغییر سرعت
+    # Apply time stretch
     if time_stretch_factor != 1.0:
         y = librosa.effects.time_stretch(y, rate=time_stretch_factor)
 
@@ -42,6 +54,12 @@ def convert_and_save(input_path, output_path, pitch_semitones, time_stretch_fact
 
 
 def process_all_tracks():
+    """
+    Process all .mp3 tracks in the base music folder.
+    For each track, create processed versions for all combinations of:
+    - Voice genders (original, male, female)
+    - Frequency/speed levels (verylow → veryhigh)
+    """
     print("🎵 Starting pitch conversion...")
 
     for file in os.listdir(music_folder):

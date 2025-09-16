@@ -4,6 +4,7 @@ from src.utils import config
 
 class MusicPlayer:
     def __init__(self):
+        # Initialize the pygame mixer and set default volume, song index, and frequency
         pygame.mixer.init()
         self.volume = config.DEFAULT_VOLUME
         self.current_index = config.DEFAULT_SONG_INDEX
@@ -13,13 +14,14 @@ class MusicPlayer:
         self.load_songs()
         pygame.mixer.music.set_volume(self.volume)
 
-        # ▶ شروع خودکار آهنگ اول فولدر normal
+        # ▶ Auto-play the first song in the 'normal' folder
         if self.songs:
             print("🎵 Auto-playing first song in 'normal' folder...")
             self.play()
 
     # ----------------- Folder / Song Management -----------------
     def get_available_folders(self):
+        """Detect available music folders containing valid audio files"""
         folders = []
         if not os.path.exists(config.BASE_MUSIC_DIR):
             print(f"❌ Base folder not found: {config.BASE_MUSIC_DIR}")
@@ -37,6 +39,7 @@ class MusicPlayer:
         return folders
 
     def load_songs(self):
+        """Load all valid songs from the current frequency/folder"""
         folder = os.path.join(config.BASE_MUSIC_DIR, self.current_frequency)
         valid_exts = (".mp3", ".wav", ".ogg")
 
@@ -60,6 +63,7 @@ class MusicPlayer:
 
     # ----------------- Playback -----------------
     def play(self):
+        """Play the current song"""
         if not self.songs:
             print("❌ No songs to play!")
             return
@@ -68,18 +72,22 @@ class MusicPlayer:
         print(f"▶ Playing: {os.path.basename(self.songs[self.current_index])}")
 
     def stop(self):
+        """Stop playback"""
         pygame.mixer.music.stop()
         print("⏹ Stopped")
 
     def pause(self):
+        """Pause playback"""
         pygame.mixer.music.pause()
         print("⏸ Paused")
 
     def resume(self):
+        """Resume playback"""
         pygame.mixer.music.unpause()
         print("▶ Resumed")
 
     def next_track(self):
+        """Play the next track in the list"""
         if not self.songs:
             print("❌ No songs loaded")
             return
@@ -87,6 +95,7 @@ class MusicPlayer:
         self.play()
 
     def prev_track(self):
+        """Play the previous track in the list"""
         if not self.songs:
             print("❌ No songs loaded")
             return
@@ -95,12 +104,14 @@ class MusicPlayer:
 
     # ----------------- Volume -----------------
     def change_volume(self, delta):
+        """Adjust the volume by a delta, ensuring it remains between 0.0 and 1.0"""
         self.volume = min(1.0, max(0.0, self.volume + delta))
         pygame.mixer.music.set_volume(self.volume)
         print(f"🔊 Volume: {self.volume:.1f}")
 
     # ----------------- Folder / Frequency -----------------
     def change_frequency(self, freq):
+        """Switch to a different frequency/folder"""
         if freq not in self.available_folders:
             print(f"❌ Unsupported folder/frequency: {freq}")
             print(f"Available folders: {self.available_folders}")
@@ -111,6 +122,7 @@ class MusicPlayer:
         self.play()
 
     def next_folder(self):
+        """Move to the next folder/frequency"""
         if not self.available_folders:
             return
         idx = self.available_folders.index(self.current_frequency)
@@ -120,6 +132,7 @@ class MusicPlayer:
         self.play()
 
     def prev_folder(self):
+        """Move to the previous folder/frequency"""
         if not self.available_folders:
             return
         idx = self.available_folders.index(self.current_frequency)
@@ -129,6 +142,7 @@ class MusicPlayer:
         self.play()
 
     def reset_folder(self):
+        """Reset to the default folder/frequency"""
         self.current_frequency = config.DEFAULT_FREQUENCY
         self.current_index = 0
         self.load_songs()
@@ -137,6 +151,7 @@ class MusicPlayer:
 
 # ----------------- Optional Terminal Control -----------------
 def run_player():
+    """Optional terminal-based control for testing the music player"""
     player = MusicPlayer()
     print("🎧 Music control ready! Commands:")
     print(

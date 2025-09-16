@@ -1,42 +1,62 @@
 import socket
+import threading
+import datetime
 
-# TCP server configuration
-HOST = "127.0.0.1"   # localhost (for test)
-PORT = 5055          # must match the client port
+# Server configuration
+HOST = "127.0.0.1"  # Localhost
+PORT = 5055  # TCP port for incoming connections
 
-def start_server():
-    # Create TCP socket
-    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_socket.bind((HOST, PORT))
-    server_socket.listen(1)
 
-    print(f"✅ Test server is running on {HOST}:{PORT} ...")
-    print("Waiting for client connection...")
+def handle_client(conn, addr):
+    """
+    Handle communication with a single client.
+    This function runs in a separate thread for each client.
 
-    while True:
-        conn, addr = server_socket.accept()
-        print(f"📡 Connected by {addr}")
-
+    Args:
+        conn (socket.socket): The client socket object.
+        addr (tuple): Client's address (IP, port).
+    """
+    print(f"📡 Connected by {addr}")
+    with conn:
         while True:
             try:
-                # Receive data (max 1024 bytes)
+                # Receive up to 1024 bytes from client
                 data = conn.recv(1024)
                 if not data:
-                    break  # connection closed
-
+                    break  # Client disconnected
                 message = data.decode("utf-8")
-                print(f"➡️ Received: {message}")
-
-                # Example response back to client
+                # Log received message with timestamp and client address
+                print(f"{datetime.datetime.now()} ➡️ {addr} : {message}")
+                # Send acknowledgment back to client
                 response = f"ACK: {message}"
                 conn.sendall(response.encode("utf-8"))
-
             except ConnectionResetError:
-                print("⚠️ Connection lost!")
+                print(f"⚠️ Connection lost with {addr}")
                 break
+    print(f"❌ Client {addr} disconnected")
 
-        conn.close()
-        print("❌ Client disconnected. Waiting for new connection...")
+
+def start_server():
+    """
+    Start a multi-client TCP server.
+    Listens for incoming client connections and spawns a new thread for each client.
+    """
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server_socket:
+        server_socket.bind((HOST, PORT))
+        server_socket.listen()
+        print(f"✅ Multi-client server running on {HOST}:{PORT}")
+
+        try:
+            while True:
+                # Accept new client connection
+                conn, addr = server_socket.accept()
+                # Start a new thread to handle the client independently
+                client_thread = threading.Thread(target=handle_client, args=(conn, addr))
+                client_thread.daemon = True  # Daemon threads exit automatically on program termination
+                client_thread.start()
+        except KeyboardInterrupt:
+            print("\n⚠️ Server stopped by user.")
+
 
 if __name__ == "__main__":
     start_server()

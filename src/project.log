@@ -76,3 +76,7 @@
 2025-09-16 16:28:08,187 [ERROR] src.voice_module.microphone_utils: ❌ Speech could not be recognized (unintelligible).
 2025-09-16 16:28:13,727 [INFO] src.voice_module.microphone_utils: ✅ Recognized text: play
 2025-09-16 16:28:13,727 [INFO] voice_module.voice_command_handler: Executing command: play
+2025-09-16 16:54:04,428 [INFO] MusicVoiceControl: ⚡ SpeedControl ready (normal speed)
+2025-09-16 16:57:38,363 [INFO] MusicVoiceControl: ⚡ Speed increased → 1.1x
+2025-09-16 16:57:38,689 [INFO] MusicVoiceControl: ⚡ Speed increased → 1.2x
+2025-09-16 16:57:38,861 [INFO] MusicVoiceControl: ⚡ Speed increased → 1.3x
