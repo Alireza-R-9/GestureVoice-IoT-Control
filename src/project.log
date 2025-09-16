@@ -64,3 +64,15 @@
 2025-09-14 10:33:08,944 [INFO] MusicVoiceControl: ⚡ SpeedControl ready (normal speed)
 2025-09-14 10:39:47,318 [INFO] MusicVoiceControl: ⚡ SpeedControl ready (normal speed)
 2025-09-14 10:43:41,358 [INFO] MusicVoiceControl: ⚡ SpeedControl ready (normal speed)
+2025-09-16 16:24:05,095 [INFO] MusicVoiceControl: ⚡ SpeedControl ready (normal speed)
+2025-09-16 16:26:44,327 [INFO] MusicVoiceControl: ⚡ SpeedControl ready (normal speed)
+2025-09-16 16:27:43,197 [INFO] MusicVoiceControl: ⚡ Speed increased → 1.1x
+2025-09-16 16:27:56,616 [INFO] src.voice_module.microphone_utils: 🎙️ Listening... Please speak now.
+2025-09-16 16:27:58,859 [INFO] src.voice_module.microphone_utils: 🎙️ Listening... Please speak now.
+2025-09-16 16:28:02,081 [INFO] src.voice_module.microphone_utils: 🎙️ Listening... Please speak now.
+2025-09-16 16:28:02,764 [ERROR] src.voice_module.microphone_utils: ❌ Speech could not be recognized (unintelligible).
+2025-09-16 16:28:02,901 [INFO] src.voice_module.microphone_utils: 🎙️ Listening... Please speak now.
+2025-09-16 16:28:07,799 [ERROR] src.voice_module.microphone_utils: ❌ Speech could not be recognized (unintelligible).
+2025-09-16 16:28:08,187 [ERROR] src.voice_module.microphone_utils: ❌ Speech could not be recognized (unintelligible).
+2025-09-16 16:28:13,727 [INFO] src.voice_module.microphone_utils: ✅ Recognized text: play
+2025-09-16 16:28:13,727 [INFO] voice_module.voice_command_handler: Executing command: play
