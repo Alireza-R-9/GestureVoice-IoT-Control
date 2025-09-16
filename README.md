@@ -70,5 +70,3 @@ streamlit run src/streamlit_app.py
 **Alireza Rostami**
 **Supervisor:** Dr. Mahdi Sifipour
 **Hamedan University of Technology**
-
-```
