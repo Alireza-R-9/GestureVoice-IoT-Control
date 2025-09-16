@@ -68,5 +68,8 @@ streamlit run src/streamlit_app.py
 ## ✨ Author
 
 **Alireza Rostami**
+
 **Supervisor:** Dr. Mahdi Sifipour
+
 **Hamedan University of Technology**
+
